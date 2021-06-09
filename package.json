@@ -10,9 +10,9 @@
   "main": "./borokero.js",
   "scripts": {
     "version": "echo $npm_package_version",
-    "start": "node -r dotenv/config ./index.js",
+    "start": "node -r dotenv/config ./borokero.js",
     "test": "mocha --exit tests",
-    "startmon": "DEBUG=* nodemon ./index",
+    "startmon": "DEBUG=* nodemon ./borokero.js",
     "clean-install": "sudo rm -rf node_modules && npm install"
   },
   "author": "Hadi Mahdavi",
