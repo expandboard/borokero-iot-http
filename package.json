@@ -1,6 +1,6 @@
 {
   "name": "borokero-iot-http",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "http broker based on aedes",
   "homepage": "https://github.com/borokero/borokero-iot-http#readme",
   "repository": {
@@ -10,26 +10,23 @@
   "main": "./borokero.js",
   "scripts": {
     "version": "echo $npm_package_version",
-    "start": "node borokero.js",
-    "test": "mocha --recursive --bail --reporter spec test"
+    "start": "node -r dotenv/config ./index.js",
+    "test": "mocha --exit tests",
+    "startmon": "DEBUG=* nodemon ./index",
+    "clean-install": "sudo rm -rf node_modules && npm install"
   },
   "author": "Hadi Mahdavi",
   "license": "ISC",
   "dependencies": {
-    "@authbroker/authbroker": "0.0.5",
+    "@borokero/borokero-auth": "0.0.2-development",
     "callback-stream": "^1.1.0",
     "concat-stream": "^2.0.0",
-    "corsify": "^2.1.0"
+    "corsify": "^2.1.0",
+    "aedes": "0.46.0"
   },
   "devDependencies": {
-    "aedes": "^0.45.0",
-    "chai": "~3.5.0",
-    "mocha": "~3.2.0",
-    "pre-commit": "~1.2.2",
-    "sinon": "~1.17.7",
-    "superagent": "~3.3.1",
-    "supertest": "~2.0.1",
-    "tmp": "0.0.31"
+    "chai": "4.3.4",
+    "mocha": "9.0.0"
   },
   "docker-user": "borokero"
 }
